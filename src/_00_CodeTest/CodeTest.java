@@ -2,20 +2,16 @@ package _00_CodeTest;
 
 public class CodeTest {
     public static void main(String[] args) {
-        String my_string = "abcdef";
-        String letter = "f";
-        String answer = "";
-        for (int i = 0 ; i < my_string.length() ; i++) {
-            System.out.println(my_string.substring(i,i+1));
-            System.out.println(my_string.substring(i,i+1).equals(letter));
-            if (my_string.substring(i,i+1) == letter) {
-                answer += "";
-                continue;
-            } else {
-                answer += my_string.substring(i,i+1);
-            }
-
+        int[] num_list = {3, 4, 5, 2, 1};
+        int prod = 1;
+        int sumpow = 0;
+        for (int i = 0 ; i < num_list.length ; i++) {
+            prod *= num_list[i];
+            sumpow += num_list[i]*num_list[i];
+            System.out.println(prod);
+            System.out.println(sumpow);
         }
-        System.out.println(answer);
+        System.out.println(prod > sumpow ? 0 : 1);
+
     }
 }
