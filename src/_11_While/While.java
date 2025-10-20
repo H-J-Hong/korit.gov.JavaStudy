@@ -91,27 +91,52 @@ public class While {
             i++;
         }
 
-        System.out.println(sum);
+        System.out.println("누적합 : " + sum);
 
 //        문제 1 ~ 100까지 식당 웨이팅
-//        1번부터 차례로 입장하다가 10번 손님 입장할때 한정 메뉴 sold out
+//        1번부터 차례로 입장 : "**번 손님 입장" 출력
+//        10번 손님 입장할때 한정 메뉴 sold out
 //        마지막에는 영업 종료
 
         i = 1;
+        int soldOut = 10;
+
         while (i<=100) {
             System.out.print(i + "번 손님 : ");
-            if (i == 10) {
+            if (i == soldOut) {
                 System.out.println("한정 메뉴 sold out!!");
+                i++;
                 break;
             } else System.out.println("한정 메뉴 제공.");
             i++;
         }
 
-        System.out.println("영업 종료!");
+        System.out.println(i++ + "번 이후 영업 종료!");
 
 //        문제 1 ~ 50번까지 웨이팅
 //        메뉴가 20개까지 한정 판매 => "솔드 아웃 가게 샷다 내림"
 //        14번 노쇼 => "**번 노쇼 발생!"
 //        while문으로 구현
+        i = 1;
+        soldOut = 20;
+        int noShow = 14;
+
+        while (i<=50) {
+            System.out.print(i + "번 손님 : ");
+            if (i == noShow) {
+                System.out.println("노쇼 발생!");
+                soldOut++;
+                i++;
+                continue;
+            } else if (i == soldOut) {
+                System.out.println("한정 메뉴 sold out!!");
+                i++;
+                break;
+            } else System.out.println("한정 메뉴 제공.");
+            i++;
+        }
+
+        System.out.println(i++ + "번 이후 영업 종료!");
+
     }
 }

@@ -2,14 +2,19 @@ package _00_CodeTest;
 
 public class CodeTest {
     public static void main(String[] args) {
-        String my_string = "hello";
-        int n = 3;
+        String my_string = "abcdef";
+        String letter = "f";
         String answer = "";
-        for (int i = 1 ; i <= my_string.length() ; i++) {
-            for (int j = 1; j <= n ; j++) {
-                System.out.println(my_string.substring(i-1,i));
-                answer += my_string.substring(i-1,i);
+        for (int i = 0 ; i < my_string.length() ; i++) {
+            System.out.println(my_string.substring(i,i+1));
+            System.out.println(my_string.substring(i,i+1).equals(letter));
+            if (my_string.substring(i,i+1) == letter) {
+                answer += "";
+                continue;
+            } else {
+                answer += my_string.substring(i,i+1);
             }
+
         }
         System.out.println(answer);
     }
