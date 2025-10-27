@@ -31,6 +31,9 @@ public class Main {
         *
         * 그러므로 추상 클래스의 객체가 만들어진것이 아니지만, 추상 클래스의 개념은 지키고 있다.
         * */
+        fct.setFactoryName("녹산공장");
+        fct.produce("제품");
+        fct.manage();
 
         PhoneFactory pfct2 = new PhoneFactory();
         pfct2.setFactoryName("삼성 공장");
