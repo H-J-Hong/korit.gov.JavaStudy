@@ -9,7 +9,7 @@ package _20_Casting.Shape;
 * 원주율 3.14
 * */
 
-public class Circle implements Shape {
+public class Circle extends Shape {
     private double r;
 
     public Circle(double r) {
@@ -23,6 +23,6 @@ public class Circle implements Shape {
 
     @Override
     protected void drawInternal() {
-        System.out.println("원그리기 r =" + this.r + " >>>>> " + this.area());
+        System.out.println("원그리기 r = " + this.r + " >>>>> " + this.area());
     }
 }

@@ -9,7 +9,7 @@ package _20_Casting.Shape;
 * drawInternal => "직사각형 그리기 (가로 - **, 세로 - **)"
 * */
 
-public class Rectangle implements Shape {
+public class Rectangle extends Shape {
     private double w;
     private double h;
 
@@ -25,6 +25,7 @@ public class Rectangle implements Shape {
 
     @Override
     protected void drawInternal() {
-        System.out.println("직사각형 그리기 (가로 -" + this.w + ", 세로 - " + this.h + " >>>>> " + this.area());
+        System.out.println("직사각형 그리기 : 가로 = " + this.w + ", 세로 = " + this.h + " >>>>> " + this.area());
     }
+
 }
