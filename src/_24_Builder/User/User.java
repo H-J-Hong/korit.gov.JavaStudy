@@ -20,7 +20,7 @@ import lombok.ToString;
 
 @Builder
 @ToString
-public class User {
+class User {
     private int userId;
     private String username;
     private String password;
