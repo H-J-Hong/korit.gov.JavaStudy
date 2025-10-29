@@ -4,21 +4,40 @@ import java.util.*;
 
 public class CodeTest {
     public static void main(String[] args) {
-        String[] my_strings = {"progressive", "hamburger", "hammer", "ahocorasick"};
-        int[][] parts = {{0, 4}, {1, 2}, {3, 5}, {7, 7}};
+        int[] arr = {3, 2, 4, 1, 3};
+        boolean[] flag = {true, false, true, false, false};
 
-        String answer = "";
-        int j = 0;
-        for(String i : my_strings) {
-            System.out.println(j);
-            System.out.println(i.substring(parts[j][0],parts[j][1]));
-            answer += i.substring(parts[j][0],parts[j][1]);
-            j++;
+        String tmp = "";
+        int i = 0;
+        for(boolean z : flag) {
+            if(z) {
+                for (int j = 0; j < arr[i] * 2; j++) tmp += arr[i] + "";
+            }
+            else {
+                tmp = tmp.substring(0,tmp.length()-arr[i]);
+            }
+            i++;
         }
 
-        System.out.println(answer);
+        System.out.println(tmp);
 
+        String[] tmp2 = tmp.split("");
+        int[] answer = new int[tmp2.length];
+        i = 0;
+        for (String t : tmp2) {
+            answer[i] = Integer.parseInt(tmp2[i]);
+            i++;
+        }
 
+        System.out.println(Arrays.toString(answer));
+
+//        String[][] morse = {
+//                '.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f',
+//                '--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l',
+//                '--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r',
+//                '...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x',
+//                '-.--':'y','--..':'z'
+//        };
 
     }
 }

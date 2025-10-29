@@ -41,5 +41,38 @@ public class Main {
         * 그 변수는 상수 풀의 "US" 주소를 가리키므로 주소 비교 결과는 항상 true입니다.
         *
         * */
+        System.out.println("=====================================");
+        String a = "abc";
+        System.out.println(a instanceof String);            // instanceof로 자료형 판단                      true
+        String b = "abc";
+        System.out.println(a==b);                           // 문자열 상수 풀에 "abc"가 있으므로 참조 비교       true
+        String c = new String("abc");
+        System.out.println(a==c);                           // new String으로 별도 객체 선언된 내용 이므로      false
+        System.out.println(a==b);                           // 문자열 상수 풀에 여전히 "abc"가 있으므로 참조 비교 true
+        System.out.println("" + a==b);                      // """abc" vs "abc" 비교 이므로 참조 비교         false
+        System.out.println("" + (a==b));                    // abc vs abc 비교후 ""가 더해지므로              true
+        System.out.println("" + a.equals(c));               // 값 비교에는 문자열 상수 풀 영향 없음              true
+        System.out.println("" + a.equals(b));               // 값 비교에는 문자열 상수 풀 영향 없음              true
+        System.out.println(a==b);                           // 문자열 상수 풀에 "abc"가 다시 들어가므로 참조 비교 true
+
+
+
+        /*
+        * JVM 메모리 할당 - RAM 할당후 3가지 공간이 생김
+        *
+        * 1. 메소드 : 클래스 정보, 생성자 정보, 메소드 정보, static(전역변수), 런타임 상수 풀(문자열!!) - GC에서 정리하지 않음.
+        * 2. 스택 : 선언될 내용을 메소드 공간에서 가져와서 임시 저장되고 사용이 끝나면 GC가 삭제
+        * 3. 힙 : 선언된 객체 내용이나 실제 값이 저장됨. / 문자열 상수 풀 -> 런타임 상수풀에서 생성된 내용이 저장됨.
+        *
+        * 인터프리터가 하는 일) 여러번 선언되는 내용에 대해 메소드에 여러번 접근하여 스택에 쌓고 지우는 행위가 비효율적이므로
+        *
+        * 예) String a = "abc";                  문자열 상수풀에서 관리됨
+        *     String b = "abc";                 문자열 상수풀을 검색하여 참조함
+        *
+        * => 그러므로 "==" 으로 비교시 true 판정
+        *
+        *     String c = new String("abc");     문자열 상수 풀이 아니라 객체 선언부에서 관리됨
+        * => 그러므로 "==" 으로 비교시 false 판정
+        * */
     }
 }
