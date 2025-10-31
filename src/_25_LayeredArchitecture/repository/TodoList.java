@@ -18,8 +18,8 @@ public class TodoList {
         /*
          * 새로 넣을 배열의 길이 => 원래 있던 배열의 길이 + 1
          * 새로 넣을 배열에 원래 있던 배열 내용을 먼저 추가
-         * 새로 넣을 배열의 맨 마지막 공간에 user 삽입
-         * users에 있던 배열에서 새로운 배열로 바꾸기
+         * 새로 넣을 배열의 맨 마지막 공간에 투두 삽입
+         * 원래 있던 투두 배열에서 새로운 배열로 바꾸기
          * */
         Todo[] tmp = new Todo[this.todos.length+1];
         for (int i = 0; i < this.todos.length; i++) {
@@ -29,6 +29,7 @@ public class TodoList {
         this.todos = tmp;
     }
 
+//    스프링부트 사용시 userId 기준으로 하는것이 좋음 (class 대신 int로)
     public Todo[] getUserTodoList(User user) {
         int userTodoNum = 0;
         for (int i = 0; i < todos.length; i++) {

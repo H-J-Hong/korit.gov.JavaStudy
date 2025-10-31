@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 @AllArgsConstructor
 @Getter
 @Setter
@@ -18,8 +20,10 @@ public class TodoRegisterReqDto {
 
     public Todo toEntity() {
         return Todo.builder()
+                .todoId(0)                          // sql사용하여 db 추가시 0을 활용하여 auto-increment
                 .contents(contents)
                 .user(user)
+                .createDt(LocalDateTime.now())
                 .build();
     }
 }

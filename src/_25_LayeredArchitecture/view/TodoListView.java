@@ -88,7 +88,7 @@ public class TodoListView {
 //        signupReqDto를 UserService의 회원 가입 로직으로 전달
         userService.signup(signupReqDto);
         System.out.println("===== 회원 가입 완료 =====");
-//        조회 할 수 있는 로직
+//        디버깅용 조회 할 수 있는 로직
         userService.printAllUserList();
     }
 
@@ -132,9 +132,12 @@ public class TodoListView {
         System.out.println("[ Todo 등록 ]");
         System.out.print("contents>>> ");
         String contents = scanner.nextLine();
-        TodoRegisterReqDto todoRegisterReqDto = new TodoRegisterReqDto(contents, principal);
+        TodoRegisterReqDto todoRegisterReqDto =
+                new TodoRegisterReqDto(contents, principal);
+//        투두 등록
         todoService.todoRegister(todoRegisterReqDto);
         System.out.println("===== Todo 등록 완료 =====");
+//        디버깅용 내용 전체 출력
         todoService.printAllTodoList();
 
     }

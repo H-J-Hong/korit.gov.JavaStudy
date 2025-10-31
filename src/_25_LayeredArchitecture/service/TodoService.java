@@ -17,8 +17,12 @@ public class TodoService {
 
 
     public void todoRegister(TodoRegisterReqDto todoRegisterReqDto) {
+//        1. 엔티티
+//        2. todoId 생성
+//        (3. createDt 생성) -> dto에서 바로 생성 가능함 (주입된 값이 아니라 서버에서 구하는 값이므로)
+//        3. todoList 추가
         Todo todo = todoRegisterReqDto.toEntity();
-        todo.setCreateDt(LocalDateTime.now());
+//        todo.setCreateDt(LocalDateTime.now());
         todo.setTodoId(todoList.generateTodoId());
         todoList.add(todo);
     }
