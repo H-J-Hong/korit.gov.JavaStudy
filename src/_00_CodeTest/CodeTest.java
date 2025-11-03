@@ -8,7 +8,6 @@ public class CodeTest {
     public static void main(String[] args) {
 //        for (String star = "*" ; star.length() <= 5 ; star+="*") System.out.println(star);
         int[] arr = {1, 2, 1, 4, 5, 2, 9};
-
         int f = 0;
         int l = 0;
         for (int i = 0 ; i < arr.length ; i++) {
@@ -25,6 +24,7 @@ public class CodeTest {
             }
 
         }
+
         System.out.println(l-f);
 
         int z = 0;
