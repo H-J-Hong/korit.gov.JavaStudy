@@ -1,16 +1,12 @@
 package _32_LayeredArchitecture2.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@ToString
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
+@Builder
 public class User {
-    private int userId;
+    private Integer userId;
     private String username;
     private String password;
-    private String name;
-    private String email;
 }

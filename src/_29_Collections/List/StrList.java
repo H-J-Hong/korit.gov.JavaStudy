@@ -22,10 +22,11 @@ public class StrList {
         List<String> strList1_1 = new ArrayList<>(Arrays.asList("A","B","C"));
         System.out.println(strList1_1);                     // 리스트에 값 추가 하는 방법 2
 
-
+        List<String> strList1_2 = new ArrayList<>();
         String[] strArray1 = {"A", "B", "C"};
         System.out.println(strArray1);
         System.out.println(Arrays.toString(strArray1));     // 배열에 접근하는 방법 - 배열 내용 전체 출력 (비교1)
+//        strList1_2.add(Arrays.asList(strArray1));
 
         strList2.add("java");
         strList2.add("python");
