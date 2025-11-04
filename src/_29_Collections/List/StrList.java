@@ -51,6 +51,7 @@ public class StrList {
         String removeElem1 = "kotlin";
         boolean removeResult1 = strList2.remove(removeElem1);   // 리스트에서 요소 삭제 하는 방법 - remove() 메소드 활용
         System.out.println(strList2 + " 에 \"" + removeElem1 + "\" 삭제 여부 : " + removeResult1);
+        System.out.println(strList2 + "              " + strList2.remove(3));
 
         Collections.sort(strList2);                         // 오름차순 정렬 - Collections 클래스의 sort() 메소드 활용
         System.out.println(strList2);
