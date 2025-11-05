@@ -36,4 +36,16 @@ public class UserRepositoryImpl implements UserRepository{
         }
         return null;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("User 목록 : [");
+        for (int i = 0; i < users.size(); i++) {
+            sb.append(users.get(i));
+            if (i != users.size() -1) sb.append(", ");
+        }
+        sb.append(" ]");
+        return sb.toString();
+    }
 }
