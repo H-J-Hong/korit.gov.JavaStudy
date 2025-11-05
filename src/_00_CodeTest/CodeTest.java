@@ -65,14 +65,28 @@ public class CodeTest {
 //            }
 //            System.out.println(Arrays.toString(answer));
 //        }
-        String my_string = "Programmers";
+        String my_string = "3 + 4";
 
-        int[] answer = new int[52];
-        for (char z : my_string.toCharArray()) {
-            if ((z-'a') < 0) answer[z-'A']++;
-            else answer[26+z-'a']++;
+        int answer = 0;
+        String oper = "";
+        String[] s = my_string.split(" ");
+        for (String z : s) {
+            System.out.print(z);
+            if ("+".equals(z) || "-".equals(z)) {
+                oper = z;
+                System.out.println("   aaa   " + oper);
+            }
+            else {
+                answer += ("-".equals(oper)) ? -Integer.parseInt(z) : Integer.parseInt(z);
+                oper = "";
+                System.out.print("   bbb   " + oper + "     ");
+                System.out.println(answer);
+            }
         }
-        System.out.println(Arrays.toString(answer));
+
+
+//        System.out.println(Arrays.toString(answer));
+        System.out.println(answer);
 
     }
 }
