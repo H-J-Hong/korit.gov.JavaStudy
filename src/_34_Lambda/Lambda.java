@@ -11,7 +11,11 @@ package _34_Lambda;
 *
 * */
 
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Lambda {
     public static void main(String[] args) {
@@ -52,7 +56,18 @@ public class Lambda {
         * 주요 함수형 인터페이스
         * Runnable - void run(); -> 매개변수 반환값 없는 단순 실행용 인터페이스
         * Supplier - T get(); -> 매개변수 없이 값을 반환하는 인터페이스, 단순히 값을 '공급'하는 역할
+        * Consumer - void accept(T t); -> 매개변수를 받아 아무것도 반환하지 않는 인터페이스, 값을 '소비'하는 역할
+        * Function<T, R> - R apply(T t); -> 하나의 매개변수를 받아서 연산을 수행한 후 결과를 리포트
+        * Predicate - boolean test(T t); -> 하나의 매개변수를 받아서 특정 조건을 검사한 후 true/false 반환
         * */
+
+        Supplier<String> stringSupplier = () -> "Supplier Interface 문자열 반환";
+//        System.out.println(stringSupplier.get());
+        Consumer<String> stringConsumer = (str) -> System.out.println("메세지 : " + str);
+        stringConsumer.accept(stringSupplier.get());
+        Function<String,String[]> stringFunction = (str) -> str.split("");
+        System.out.println(Arrays.toString(stringFunction.apply("abcdefg")));
+
     }
 }
 
