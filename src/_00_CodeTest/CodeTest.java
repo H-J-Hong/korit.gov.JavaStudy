@@ -65,28 +65,21 @@ public class CodeTest {
 //            }
 //            System.out.println(Arrays.toString(answer));
 //        }
-        String my_string = "3 + 4";
-
+        int[] numbers = {1, 2, 3, 4, 5, 6};
+        int k = 5;
+        int count = (2 * k) / numbers.length + 1 ;
+        List<Integer> l = new ArrayList<>();
         int answer = 0;
-        String oper = "";
-        String[] s = my_string.split(" ");
-        for (String z : s) {
-            System.out.print(z);
-            if ("+".equals(z) || "-".equals(z)) {
-                oper = z;
-                System.out.println("   aaa   " + oper);
-            }
-            else {
-                answer += ("-".equals(oper)) ? -Integer.parseInt(z) : Integer.parseInt(z);
-                oper = "";
-                System.out.print("   bbb   " + oper + "     ");
-                System.out.println(answer);
-            }
-        }
 
+        for (int i = 1 ; i <= count ; i++) for (int n : numbers) l.add(n);
+        for (int i = 0 ; i < k ; i++) answer = l.get(i*2);
+
+        System.out.println(answer);
+
+        System.out.println(-5 + 3 * 10 / -2);
 
 //        System.out.println(Arrays.toString(answer));
-        System.out.println(answer);
+//        System.out.println(answer);
 
     }
 }
